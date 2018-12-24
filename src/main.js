@@ -7,7 +7,10 @@ import Vuex from 'vuex'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
-import MenuBar from '@/components/Menu'
+import Home from '@/components/Home'
+import Post from '@/components/Posts'
+import Users from '@/components/Users'
+import Article from '@/components/Article'
 
 Vue.config.productionTip = false
 
@@ -16,7 +19,31 @@ Vue.use(Vuex)
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: MenuBar }
+  {
+    path: '/',
+    component: Home,
+    children: [
+      { path: '/', component: Home }
+    ]
+  },
+  {
+    path: '/Posts',
+    component: Post,
+    children: [
+      { path: '/', component: Post }
+    ]
+  },
+  {
+    path: '/Users',
+    component: Users,
+    children: [
+      { path: '/', component: Users }
+    ]
+  },
+  {
+    path: '/Article',
+    component: Article
+  }
 ]
 
 const router = new VueRouter({
