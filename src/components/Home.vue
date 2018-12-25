@@ -4,11 +4,17 @@
 </template>
 
 <script>
+import {
+  mapActions,
+  mapGetters
+} from 'vuex'
+
 export default {
   name: 'Home',
-  data () {
-    return {
-    }
+  computed: {
+    ...mapGetters([
+      'users' 
+    ])
   }
 }
 </script>

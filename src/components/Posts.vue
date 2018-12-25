@@ -1,18 +1,36 @@
 <template>
     <div style="background:#eee;padding: 20px">
-        <Card :bordered="false">
-            <p slot="title">No border title</p>
-            <p>Content of no border type. Content of no border type. Content of no border type. Content of no border type. </p>
+        <Card :bordered="false" v-for="post in posts" :key="post.id">
+            <p @click="goArticle(post.id)" slot="title">{{post.title}}</p>
+            <p>{{post.body}}</p>
         </Card>
+        <br/>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
+import {
+  mapActions,
+  mapGetters
+} from 'vuex'
+
 export default {
   name: 'Posts',
-  data () {
-    return {
+  methods: {
+    goArticle(postId) {
+        this.$router.push({ name: 'Article', params: { postId }})
     }
+    },
+  computed: {
+    ...mapGetters([
+      'posts' 
+    ])
   }
 }
 </script>
+<style>
+.ivu-card {
+    margin-bottom: 10px;
+}
+</style>
