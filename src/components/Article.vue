@@ -1,15 +1,9 @@
 <template>
-  <div>
-    <Content :style="{padding: '0 50px'}">
-        <Breadcrumb :style="{margin: '20px 0'}">
-            {{posts.filter(x => x.id == this.$route.params.postId)[0].title}}
-        </Breadcrumb>
-        <Card>
-            <div style="min-height: 200px;">
-                {{posts.filter(x => x.id == this.$route.params.postId)[0].body}}
-            </div>
-        </Card>
-    </Content>
+  <div style="background:#eee;padding: 30px">
+    <Card :bordered="false">
+      <p slot="title">{{posts.filter(x => x.id == this.$route.params.postId)[0].title}}</p>
+      <p>{{posts.filter(x => x.id == this.$route.params.postId)[0].body}}</p>
+    </Card>
   </div>
 </template>
 

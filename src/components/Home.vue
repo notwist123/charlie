@@ -1,11 +1,14 @@
 <template>
   <div style="background:#eee;padding: 20px">
-        <Card :bordered="false" v-for="post in myFavo" :key="post.id">
+    <Row>
+        <Col span="6" v-for="post in myFavo" :key="post.id" style="padding: 10px;">
+          <Card :bordered="false" style="height: 270px;">
             <p @click="goArticle(post.id)" slot="title">{{post.title}}</p>
             <p>{{post.body}}</p>
-        </Card>
-        <br/>
-    </div>
+          </Card>
+        </Col>
+    </Row>
+  </div>
 </template>
 
 <script>

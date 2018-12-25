@@ -21,12 +21,17 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/',
+    component: Home
+  },
+  {
     path: '/Home',
     component: Home
   },
   {
     path: '/Posts',
-    component: Posts
+    component: Posts,
+    caseSensitive: false
   },
   {
     path: '/Users',
