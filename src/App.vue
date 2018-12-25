@@ -8,15 +8,15 @@
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
                         <Menu-Item to='/Home' name="1">
-                            <Icon type="ios-navigate"></Icon>
-                            Home
+                            <Icon type="ios-home" /></Icon>
+                                Home
                         </Menu-Item>
                         <Menu-Item to='/Users' name="2">
-                            <Icon type="ios-keypad"></Icon>
+                            <Icon type="md-people" /></Icon>
                             Users
                         </Menu-Item>
                         <Menu-Item to='/Posts' name="3">
-                            <Icon type="ios-analytics"></Icon>
+                            <Icon type="ios-paper"></Icon>
                             Posts
                         </Menu-Item>
                     </div>
