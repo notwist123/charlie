@@ -1,5 +1,6 @@
 export default {
-    goArticle(state) {
-        this.$router.push('Article')
+    addToFavo(state, postId) {
+        console.log(postId)
+        state.myFavo = state.myFavo.concat(state.posts.filter(x => x.id == postId))
     }
   }

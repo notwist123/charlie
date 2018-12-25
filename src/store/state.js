@@ -1,5 +1,5 @@
 export default {
-    count: 1,
+    myFavo: [],
     users : 
     [
         {

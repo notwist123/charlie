@@ -1,5 +1,5 @@
 export default {
-    goArticle({ commit }) {
-      commit('goArticle') //呼叫mutations
+    addToFavo({ commit }, postId) {
+        commit('addToFavo', postId)
     }
   }

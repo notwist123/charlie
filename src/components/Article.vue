@@ -4,7 +4,6 @@
         <Breadcrumb :style="{margin: '20px 0'}">
             {{posts.filter(x => x.id == this.$route.params.postId)[0].title}}
         </Breadcrumb>
-        <router-view></router-view>
         <Card>
             <div style="min-height: 200px;">
                 {{posts.filter(x => x.id == this.$route.params.postId)[0].body}}
