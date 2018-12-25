@@ -4,11 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
+import store from './store'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
 import Home from '@/components/Home'
-import Post from '@/components/Posts'
+import Posts from '@/components/Posts'
 import Users from '@/components/Users'
 import Article from '@/components/Article'
 
@@ -21,27 +22,19 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: Home,
-    children: [
-      { path: '/', component: Home }
-    ]
+    component: Home
   },
   {
     path: '/Posts',
-    component: Post,
-    children: [
-      { path: '/', component: Post }
-    ]
+    component: Posts
   },
   {
     path: '/Users',
-    component: Users,
-    children: [
-      { path: '/', component: Users }
-    ]
+    component: Users
   },
   {
-    path: '/Article',
+    path: '/Article/:id',
+    name: 'Article',
     component: Article
   }
 ]
@@ -54,6 +47,7 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
