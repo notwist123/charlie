@@ -1,13 +1,17 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import VueRouter from 'vue-router'
+
 import Vuex from 'vuex'
 import store from './store'
+
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
+import VueI18n from 'vue-i18n'
+import en from './i18n/en/lang'
+import tw from './i18n/tw/lang'
+
+import VueRouter from 'vue-router'
 import Home from '@/components/Home'
 import Posts from '@/components/Posts'
 import Users from '@/components/Users'
@@ -15,9 +19,10 @@ import Article from '@/components/Article'
 
 Vue.config.productionTip = false
 
-Vue.use(iView)
 Vue.use(Vuex)
+Vue.use(iView)
 Vue.use(VueRouter)
+Vue.use(VueI18n)
 
 const routes = [
   {
@@ -43,16 +48,21 @@ const routes = [
     component: Article
   }
 ]
-
 const router = new VueRouter({
   routes
 })
 
-/* eslint-disable no-new */
+const locale = localStorage.getItem('locale') || 'tw'
+const i18n = new VueI18n({
+  locale,
+  messages: { en, tw }
+})
+
 new Vue({
   el: '#app',
   router,
   store,
+  i18n,
   components: { App },
   template: '<App/>'
 })

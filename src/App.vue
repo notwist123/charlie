@@ -7,20 +7,31 @@
                 <Menu mode="horizontal" theme="dark" active-name="1">
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
-                        <Menu-Item to='/Home' name="1">
+                        <Menu-Item to='/home' name="1">
                             <Icon type="ios-home" /></Icon>
-                                Home
+                            {{$t('__home')}}
                         </Menu-Item>
-                        <Menu-Item to='/Users' name="2">
+                        <Menu-Item to='/users' name="2">
                             <Icon type="md-people" /></Icon>
-                            Users
+                            {{$t('__users')}}
                         </Menu-Item>
-                        <Menu-Item to='/Posts' name="3">
+                        <Menu-Item to='/posts' name="3">
                             <Icon type="ios-paper"></Icon>
-                            Posts
+                            {{$t('__posts')}}
                         </Menu-Item>
                     </div>
+                    <Dropdown @on-click="switchLang" style="margin-left: 20px">
+                        <Button type="primary">
+                            {{$t('__lang')}}
+                            <Icon type="ios-arrow-down"></Icon>
+                        </Button>
+                        <DropdownMenu slot="list">
+                            <DropdownItem name="en">English</DropdownItem>
+                            <DropdownItem name="tw">中文</DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
                 </Menu>
+                 
             </Header>
             <router-view></router-view>
         </Layout>
@@ -31,6 +42,12 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+      switchLang(newLang) {
+        this.$i18n.locale = newLang
+        localStorage.setItem('locale', newLang)
+      }
+  }
 }
 </script>

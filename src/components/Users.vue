@@ -3,40 +3,40 @@
     <Row style="text-align:center; padding: 10px">
       <Col span="8" offset="16">
         <Card style="width: 100%;">
-            <Input search v-model="keyWord" @on-keyup="updateKeyword(keyWord)" enter-button placeholder="Enter something..." />
+            <Input search v-model="keyWord" @on-keyup="updateKeyword(keyWord)" enter-button v-bind:placeholder="$t('__EnterSometh')" />
             <br/>
             <CheckboxGroup @on-change="updateConditions(filter)" v-model="filter">
               <Checkbox label="email">
                   <Icon type="ios-mail-open" />
-                  <span>Mail</span>
+                  <span>{{$t('__Mail')}}</span>
               </Checkbox>
               <Checkbox label="username">
                   <Icon type="ios-contact" />
-                  <span>UserName</span>
+                  <span>{{$t('__UserName')}}</span>
               </Checkbox>
               <Checkbox label="address">
                   <Icon type="ios-map" />
-                  <span>Address</span>
+                  <span>{{$t('__Address')}}</span>
               </Checkbox>
               <Checkbox label="phone">
                   <Icon type="ios-call" />
-                  <span>Phone</span>
+                  <span>{{$t('__Phone')}}</span>
               </Checkbox>
               <Checkbox label="website">
                   <Icon type="logo-chrome" />
-                  <span>Website</span>
+                  <span>{{$t('__Website')}}</span>
               </Checkbox>
               <Checkbox label="companyName">
                   <Icon type="ios-bookmarks" />
-                  <span>Company Name</span>
+                  <span>{{$t('__Comapny')}}</span>
               </Checkbox>
               <Checkbox label="catchPhrase">
                   <Icon type="ios-megaphone" />
-                  <span>CatchPhrase</span>
+                  <span>{{$t('__CatchPhrase')}}</span>
               </Checkbox>
               <Checkbox label="bS">
                   <Icon type="ios-medal" />
-                  <span>Business Solution</span>
+                  <span>{{$t('__BusinessSolution')}}</span>
               </Checkbox>
           </CheckboxGroup>
         </Card>
@@ -49,14 +49,14 @@
                 <img src="../assets/user.png" style="width:20%">
                   <h3>{{user.name}}</h3>
                   <div  style="text-align:left">
-                    <p><Icon type="ios-mail-open" /> Mail: <a :href="'mailto:' + user.email">{{user.email}}</a></p>
-                    <p><Icon type="ios-contact" /> UserName: {{user.username}}</p>
-                    <p><Icon type="ios-map" /> Address: ({{user.address.zipcode}}) {{user.address.city + user.address.street + user.address.suite}}</p>
-                    <p><Icon type="ios-call" /> Phone: {{user.phone}}</p>
-                    <p><Icon type="logo-chrome" /> Website: <a :href="user.website">{{user.website}}</a></p>
-                    <p><Icon type="ios-bookmarks" /> Company Name: {{user.company.name}}</p>
-                    <p><Icon type="ios-megaphone" /> CatchPhrase: {{user.company.catchPhrase}}</p>
-                    <p><Icon type="ios-medal" /> Business Solution: {{user.company.bs}}</p>
+                    <p><Icon type="ios-mail-open" /> {{$t('__Mail')}}: <a :href="'mailto:' + user.email">{{user.email}}</a></p>
+                    <p><Icon type="ios-contact" /> {{$t('__UserName')}}: {{user.username}}</p>
+                    <p><Icon type="ios-map" /> {{$t('__Address')}}: ({{user.address.zipcode}}) {{user.address.city + user.address.street + user.address.suite}}</p>
+                    <p><Icon type="ios-call" /> {{$t('__Phone')}}: {{user.phone}}</p>
+                    <p><Icon type="logo-chrome" /> {{$t('__Website')}}: <a :href="user.website">{{user.website}}</a></p>
+                    <p><Icon type="ios-bookmarks" /> {{$t('__Comapny')}}: {{user.company.name}}</p>
+                    <p><Icon type="ios-megaphone" /> {{$t('__CatchPhrase')}}: {{user.company.catchPhrase}}</p>
+                    <p><Icon type="ios-medal" /> {{$t('__BusinessSolution')}}: {{user.company.bs}}</p>
                   </div>
             </div>
         </Card>
