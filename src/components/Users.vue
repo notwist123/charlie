@@ -3,12 +3,47 @@
     <Row style="text-align:center; padding: 10px">
       <Col span="8" offset="16">
         <Card style="width: 100%;">
-            <Input search enter-button placeholder="Enter something..." />
+            <Input search v-model="keyWord" @on-keyup="updateKeyword(keyWord)" enter-button placeholder="Enter something..." />
+            <br/>
+            <CheckboxGroup @on-change="updateConditions(filter)" v-model="filter">
+              <Checkbox label="email">
+                  <Icon type="ios-mail-open" />
+                  <span>Mail</span>
+              </Checkbox>
+              <Checkbox label="username">
+                  <Icon type="ios-contact" />
+                  <span>UserName</span>
+              </Checkbox>
+              <Checkbox label="address">
+                  <Icon type="ios-map" />
+                  <span>Address</span>
+              </Checkbox>
+              <Checkbox label="phone">
+                  <Icon type="ios-call" />
+                  <span>Phone</span>
+              </Checkbox>
+              <Checkbox label="website">
+                  <Icon type="logo-chrome" />
+                  <span>Website</span>
+              </Checkbox>
+              <Checkbox label="companyName">
+                  <Icon type="ios-bookmarks" />
+                  <span>Company Name</span>
+              </Checkbox>
+              <Checkbox label="catchPhrase">
+                  <Icon type="ios-megaphone" />
+                  <span>CatchPhrase</span>
+              </Checkbox>
+              <Checkbox label="bS">
+                  <Icon type="ios-medal" />
+                  <span>Business Solution</span>
+              </Checkbox>
+          </CheckboxGroup>
         </Card>
       </Col>
     </Row>
     <Row>
-        <Col span="8"  v-for="user in users" :key="user.id" style="padding: 10px;">
+        <Col span="8"  v-for="user in getUsersByQuery()" :key="user.id" style="padding: 10px;">
          <Card style="height: 370px;">
             <div style="text-align:center">
                 <img src="../assets/user.png" style="width:20%">
@@ -38,9 +73,25 @@ import {
 
 export default {
   name: 'Users',
+  data () {
+      return {
+          filter: [],
+          keyWord: ''
+      }
+  },
+  methods: {
+    ...mapActions([
+    'updateConditions',
+    'updateKeyword'
+    ]),
+    getUsersByQuery() {
+      return this.$store.getters.getUsersByQuery()
+    },
+  },
   computed: {
     ...mapGetters([
-      'users' 
+      'users',
+      'searchConditions'
     ])
   }
 }

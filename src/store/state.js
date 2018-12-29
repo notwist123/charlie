@@ -1,5 +1,7 @@
 export default {
     myFavo: [],
+    searchConditions: [],
+    keyWord: '',
     users : 
     [
         {

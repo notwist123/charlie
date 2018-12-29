@@ -25,21 +25,21 @@ const routes = [
     component: Home
   },
   {
-    path: '/Home',
+    path: '/home',
     component: Home
   },
   {
-    path: '/Posts',
+    path: '/posts',
     component: Posts,
     caseSensitive: false
   },
   {
-    path: '/Users',
+    path: '/users',
     component: Users
   },
   {
-    path: '/Article/:id',
-    name: 'Article',
+    path: '/article/:id',
+    name: 'article',
     component: Article
   }
 ]
