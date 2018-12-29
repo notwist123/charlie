@@ -3,6 +3,7 @@
     <template>
     <div class="layout">
         <Layout>
+            <Affix>
             <Header>
                 <Menu mode="horizontal" theme="dark" active-name="1">
                     <div class="layout-logo"></div>
@@ -33,6 +34,7 @@
                     </Dropdown>
                 </Menu>
             </Header>
+            </Affix>
             <router-view></router-view>
         </Layout>
     </div>

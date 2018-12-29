@@ -3,8 +3,8 @@
     <Row>
         <Col :xs="24" :sm="12" :md="8" :lg="6" v-for="post in myFavo" :key="post.id" style="padding: 10px;">
           <Card :bordered="false" style="height: 270px;">
-            <p @click="goArticle(post.id)" slot="title">{{post.title}}</p>
-            <p>{{post.body}}</p>
+            <p @click="goArticle(post.id)" slot="title" style="cursor:pointer">{{post.title}}</p>
+            <p @click="goArticle(post.id)" style="cursor:pointer">{{post.body}}</p>
           </Card>
         </Col>
     </Row>

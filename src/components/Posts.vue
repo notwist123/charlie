@@ -2,7 +2,7 @@
     <div style="background:#eee;padding: 30px">
       <Row>
           <Col :xs="24" :lg="0" style="padding: 10px">
-            <Card >
+            <Card>
                 <div style="text-align:center">
                     <div v-if="showAllText(this.$route.query.userid)">
                       <img v-bind:src="'./static/All.png'" style="width:20%">
@@ -27,12 +27,12 @@
             <Button @click="deleteFromFavo(post.id)" v-if="$store.getters.showDelBtn(post.id)" type="error" slot="extra">
               <Icon type="md-close-circle" size="15"/> <span class="btn-text"> {{$t('__DelFromFavo')}} </span>
             </Button>
-            <p @click="goArticle(post.id)" slot="title">{{post.title}}</p>
-            <p>{{post.body}}</p>
+            <p @click="goArticle(post.id)" slot="title" style="cursor:pointer">{{post.title}}</p>
+            <p @click="goArticle(post.id)" style="cursor:pointer">{{post.body}}</p>
             </Card>
           </Col>
           <Col :xs="0" :lg="8" style="padding: 10px">
-            <Card >
+            <Card>
                 <div style="text-align:center">
                     <div v-if="showAllText(this.$route.query.userid)">
                       <img v-bind:src="'./static/All.png'" style="width:20%">

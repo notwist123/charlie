@@ -14,5 +14,6 @@ export default {
     __Website: '網站',
     __Comapny: '公司名稱',
     __CatchPhrase: '廣告詞',
-    __BusinessSolution: '企業服務'
+    __BusinessSolution: '企業服務',
+    __TakeALook: '觀看文章'
   }

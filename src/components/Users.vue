@@ -44,11 +44,11 @@
     </Row>
     <Row>
         <Col :xs="24" :sm="12" :md="12" :lg="8" v-for="user in getUsersByQuery()" :key="user.id" style="padding: 10px;">
-         <Card style="height: 370px;">
-            <div style="text-align:center">
+         <Card style="">
+            <div style="text-align:center;">
                 <img v-bind:src="'./static/' + user.name + '.png'" style="width:20%">
                   <h3>{{user.name}}</h3>
-                  <div  style="text-align:left">
+                  <div  style="text-align:left; height: 210px;">
                     <p><Icon type="ios-mail-open" /> {{$t('__Mail')}}: <a :href="'mailto:' + user.email">{{user.email}}</a></p>
                     <p><Icon type="ios-contact" /> {{$t('__UserName')}}: {{user.username}}</p>
                     <p><Icon type="ios-map" /> {{$t('__Address')}}: ({{user.address.zipcode}}) {{user.address.city + user.address.street + user.address.suite}}</p>
@@ -58,6 +58,10 @@
                     <p><Icon type="ios-megaphone" /> {{$t('__CatchPhrase')}}: {{user.company.catchPhrase}}</p>
                     <p><Icon type="ios-medal" /> {{$t('__BusinessSolution')}}: {{user.company.bs}}</p>
                   </div>
+                  <br/>
+                  <Button @click="goPostsWithId(user.id)" type="warning">
+                    {{$t('__TakeALook')}}
+                  </Button>
             </div>
         </Card>
         </Col>
@@ -86,6 +90,9 @@ export default {
     ]),
     getUsersByQuery() {
       return this.$store.getters.getUsersByQuery()
+    },
+    goPostsWithId(userId) {
+      this.$router.push({ path: 'posts', query: { userid: userId }})
     }
   },
   computed: {
