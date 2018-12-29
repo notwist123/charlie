@@ -8,22 +8,22 @@
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
                         <Menu-Item to='/home' name="1">
-                            <Icon type="ios-home" /></Icon>
+                            <Icon type="ios-home" />
                             {{$t('__home')}}
                         </Menu-Item>
                         <Menu-Item to='/users' name="2">
-                            <Icon type="md-people" /></Icon>
+                            <Icon type="md-people" />
                             {{$t('__users')}}
                         </Menu-Item>
                         <Menu-Item to='/posts' name="3">
-                            <Icon type="ios-paper"></Icon>
+                            <Icon type="ios-paper" />
                             {{$t('__posts')}}
                         </Menu-Item>
                     </div>
                     <Dropdown @on-click="switchLang" style="margin-left: 20px">
                         <Button type="primary">
                             {{$t('__lang')}}
-                            <Icon type="ios-arrow-down"></Icon>
+                            <Icon type="ios-arrow-down"/>
                         </Button>
                         <DropdownMenu slot="list">
                             <DropdownItem name="en">English</DropdownItem>
@@ -31,7 +31,6 @@
                         </DropdownMenu>
                     </Dropdown>
                 </Menu>
-                 
             </Header>
             <router-view></router-view>
         </Layout>
@@ -51,3 +50,4 @@ export default {
   }
 }
 </script>
+

@@ -41,7 +41,7 @@ export default {
     'deleteFromFavo'
     ]),
     goArticle(postId) {
-      this.$router.push({ name: 'Article', params: { postId }})
+      this.$router.push({ name: 'article', params: { postId }})
     },
     showAllText(userId) {
       if (userId) return false

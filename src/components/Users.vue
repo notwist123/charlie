@@ -1,7 +1,7 @@
 <template>
   <div style="background:#eee;padding: 20px">
     <Row style="text-align:center; padding: 10px">
-      <Col span="8" offset="16">
+      <Col :xs="24" :sm="{span:16, offset:8}" :md="{span:12, offset:12}" :lg="{span:8, offset:16}">
         <Card style="width: 100%;">
             <Input search v-model="keyWord" @on-keyup="updateKeyword(keyWord)" enter-button v-bind:placeholder="$t('__EnterSometh')" />
             <br/>
@@ -43,7 +43,7 @@
       </Col>
     </Row>
     <Row>
-        <Col span="8"  v-for="user in getUsersByQuery()" :key="user.id" style="padding: 10px;">
+        <Col :xs="24" :sm="12" :md="12" :lg="8" v-for="user in getUsersByQuery()" :key="user.id" style="padding: 10px;">
          <Card style="height: 370px;">
             <div style="text-align:center">
                 <img src="../assets/user.png" style="width:20%">
