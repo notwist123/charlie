@@ -9,20 +9,21 @@
                     <div class="layout-nav">
                         <Menu-Item to='/home' name="1">
                             <Icon type="ios-home" />
-                            {{$t('__home')}}
+                            <span class="header-text">{{$t('__home')}}</span>
                         </Menu-Item>
                         <Menu-Item to='/users' name="2">
                             <Icon type="md-people" />
-                            {{$t('__users')}}
+                            <span class="header-text">{{$t('__users')}}</span>
                         </Menu-Item>
                         <Menu-Item to='/posts' name="3">
                             <Icon type="ios-paper" />
-                            {{$t('__posts')}}
+                            <span class="header-text">{{$t('__posts')}}</span>
                         </Menu-Item>
                     </div>
                     <Dropdown @on-click="switchLang" style="margin-left: 20px">
                         <Button type="primary">
-                            {{$t('__lang')}}
+                            <Icon type="md-globe" />
+                            <span class="header-text">{{$t('__lang')}}</span>
                             <Icon type="ios-arrow-down"/>
                         </Button>
                         <DropdownMenu slot="list">
@@ -42,12 +43,24 @@
 <script>
 export default {
   name: 'App',
-  methods: {
-      switchLang(newLang) {
-        this.$i18n.locale = newLang
-        localStorage.setItem('locale', newLang)
+  data () {
+      return {
+          windowWidth: 0
       }
+  },
+  methods: {
+    switchLang(newLang) {
+    this.$i18n.locale = newLang
+    localStorage.setItem('locale', newLang)
+    }
   }
 }
 </script>
 
+<style>
+  @media (max-width: 560px) {
+    .header-text {
+      display:none;
+    }
+  }
+</style>

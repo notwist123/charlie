@@ -46,7 +46,7 @@
         <Col :xs="24" :sm="12" :md="12" :lg="8" v-for="user in getUsersByQuery()" :key="user.id" style="padding: 10px;">
          <Card style="height: 370px;">
             <div style="text-align:center">
-                <img src="../assets/user.png" style="width:20%">
+                <img v-bind:src="'./static/' + user.name + '.png'" style="width:20%">
                   <h3>{{user.name}}</h3>
                   <div  style="text-align:left">
                     <p><Icon type="ios-mail-open" /> {{$t('__Mail')}}: <a :href="'mailto:' + user.email">{{user.email}}</a></p>
@@ -86,7 +86,7 @@ export default {
     ]),
     getUsersByQuery() {
       return this.$store.getters.getUsersByQuery()
-    },
+    }
   },
   computed: {
     ...mapGetters([
