@@ -15,5 +15,5 @@ export default {
     __Comapny: 'Company Name',
     __CatchPhrase: 'Catchphrase',
     __BusinessSolution: 'Business Solution',
-    __TakeALook: 'Look user\'s posts'
+    __TakeALook: 'User\'s posts'
   }
