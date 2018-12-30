@@ -45,11 +45,6 @@
 <script>
 export default {
   name: 'App',
-  data () {
-      return {
-          windowWidth: 0
-      }
-  },
   methods: {
     switchLang(newLang) {
     this.$i18n.locale = newLang
